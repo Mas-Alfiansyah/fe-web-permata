@@ -2,6 +2,7 @@ import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import clsx from 'clsx';
 import { LogOut } from 'lucide-react';
+import PermataLogo from '../assets/images/permata.webp';
 
 export default function StudentLayout() {
   const { logout, user } = useAuth();
@@ -22,7 +23,8 @@ export default function StudentLayout() {
             <div className="flex justify-between h-16">
                 <div className="flex">
                     <div className="shrink-0 flex items-center">
-                        <span className="text-2xl font-bold text-blue-600">Permata</span>
+                        <img src={PermataLogo} className='py-1 w-10 h-10 object-cover' alt="" />
+                        <span className="text-2xl font-bold text-gray-900">Permata</span>
                     </div>
                     <nav className="ml-6 flex space-x-8">
                         {navItems.map((item) => (

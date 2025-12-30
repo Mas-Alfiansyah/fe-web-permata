@@ -1,4 +1,4 @@
-import { Menu, Bell, User, LogOut, ChevronDown } from 'lucide-react';
+import { PanelLeft, Bell, User, LogOut, ChevronDown, Menu } from 'lucide-react';
 import { useSidebar } from '../../context/SidebarContext';
 import { useAuth } from '../../context/AuthContext';
 import { useState, useRef, useEffect } from 'react';
@@ -24,7 +24,7 @@ export default function TopNavbar() {
     }, []);
 
     return (
-        <nav className="bg-white border-b border-slate-200 h-16 fixed w-full top-0 z-40 flex items-center justify-between px-4 lg:px-6 shadow-sm">
+        <nav className="bg-white border-b border-slate-200 h-16 sticky top-0 z-40 flex items-center justify-between px-4 lg:px-6 shadow-sm shrink-0">
             <div className="flex items-center gap-4">
                 {/* Mobile Toggle */}
                 <button 
@@ -39,17 +39,17 @@ export default function TopNavbar() {
                     onClick={toggleSidebar}
                     className="hidden lg:block p-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors"
                 >
-                    <Menu size={20} />
+                    <PanelLeft size={20} />
                 </button>
 
-                <div className="flex items-center gap-2">
+                {/* <div className="flex items-center gap-2">
                     <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                         Permata
                     </span>
                     <span className="text-xs font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
                         {user?.role === 'super_admin' ? 'Super Admin' : 'Instructor'} Portal
                     </span>
-                </div>
+                </div> */}
             </div>
 
             <div className="flex items-center gap-2 sm:gap-4">

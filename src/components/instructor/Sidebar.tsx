@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import clsx from 'clsx';
 import { useSidebar } from '../../context/SidebarContext';
+import PermataLogo from '../../assets/images/permata.webp';
 
 
 const menuItems = [
@@ -46,6 +47,18 @@ export default function InstructorSidebar() {
             )}
 
             <aside className={sidebarClasses}>
+                {/* Branding */}
+                 <div className="absolute top-0 h-16 flex items-center gap-1 px-6 border-b border-slate-100 shrink-0">
+                   <div className="pw-8 h-8 rounded-lg flex items-center justify-center shrink-0">
+                        <img src={PermataLogo} className='w-full h-full object-cover' alt="" />
+                   </div>
+                   {!isCollapsed && (
+                       <span className="font-bold text-xl text-slate-800 tracking-tight">
+                           Permata
+                       </span>
+                   )}
+                </div>
+                
                 <div className="flex-1 overflow-y-auto py-4 scrollbar-thin scrollbar-thumb-slate-200">
                     <nav className="space-y-1 px-3">
                         {menuItems.map((item) => {

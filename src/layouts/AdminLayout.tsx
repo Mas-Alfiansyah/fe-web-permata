@@ -10,7 +10,7 @@ export default function AdminLayout() {
         <AdminSidebar />
         <div className="flex-1 flex flex-col min-w-0">
           <TopNavbar />
-          <main className="flex-1 overflow-auto p-4 lg:p-6 mt-16 scroll-smooth">
+          <main className="flex-1 overflow-auto p-4 lg:p-6 scroll-smooth">
             <Outlet />
           </main>
         </div>

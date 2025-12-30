@@ -5,7 +5,9 @@ import AdminDashboard from './pages/admin/Dashboard';
 import Students from './pages/admin/users/Students';
 import Instructors from './pages/admin/users/Instructors';
 import Roles from './pages/admin/users/Roles';
-import CourseList from './pages/admin/courses/CourseList';
+import AdminCourseList from './pages/admin/courses/CourseList';
+import AdminCourseDetail from './pages/admin/courses/CourseDetail';
+import CourseForm from './pages/admin/courses/CourseForm';
 import CourseCategories from './pages/admin/courses/CourseCategories';
 import CourseApproval from './pages/admin/courses/CourseApproval';
 import ActivationCodes from './pages/admin/courses/ActivationCodes';
@@ -22,7 +24,7 @@ import ModuleList from './pages/instructor/modules/ModuleList';
 import MaterialList from './pages/instructor/materials/MaterialList';
 import StudentDashboard from './pages/student/Dashboard';
 import CourseCatalog from './pages/student/CourseCatalog';
-import CourseDetail from './pages/student/CourseDetail';
+import StudentCourseDetail from './pages/student/CourseDetail';
 import LearningPlayer from './pages/student/LearningPlayer';
 import StudentMyCourses from './pages/student/MyCourses';
 import QuizInterface from './pages/student/QuizInterface';
@@ -76,7 +78,19 @@ const router = createBrowserRouter([
       },
       {
         path: 'courses',
-        element: <CourseList />,
+        element: <AdminCourseList />,
+      },
+      {
+        path: 'courses/create',
+        element: <CourseForm />,
+      },
+      {
+        path: 'courses/:id',
+        element: <AdminCourseDetail />,
+      },
+      {
+        path: 'courses/:id/edit',
+        element: <CourseForm isEdit={true} />,
       },
       {
         path: 'courses/categories',
@@ -182,7 +196,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'course/:courseId',
-        element: <CourseDetail />,
+        element: <StudentCourseDetail />,
       },
       {
         path: 'my-courses',
